@@ -16,7 +16,6 @@ def download_stock_data(tickers, period="180d"):
   data = yf.download(tickers, period=period)
   return data
 
-
 # Function to create table
 def create_table(table):
     conn = return_snowflake_conn()
