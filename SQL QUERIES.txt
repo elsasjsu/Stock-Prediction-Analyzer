@@ -1,0 +1,23 @@
+select * from stock_forecast;----FORECAST FOR THE TSLA AND NVDA
+
+
+select * from train_data_view;---TRAINED DATA VIEW
+
+SELECT * from final_result;---PREDICT FOR 7 DAYS BY UNION OF ACTUAL AND FORECAST
+
+SELECT *
+FROM FINAL_RESULT
+WHERE SYMBOL IN ('TSLA', 'NVDA')
+AND FORECAST IS NOT NULL;
+
+DESCRIBE SCHEMA ANALYTICS;---SCHEMA
+
+ SELECT table_name, column_name, data_type, is_nullable, column_default
+FROM USER_DB_PIRANHA.INFORMATION_SCHEMA.COLUMNS
+WHERE table_schema = 'ANALYTICS'
+ORDER BY table_name;-----SCHEMA OF FINAL RESULT WITH DETAILS
+
+
+select * from STOCK_PRICES----180 DAYS DATA;
+
+
