@@ -1,11 +1,10 @@
-Lab 2 – End-to-End Data Analytics Pipeline
+# Lab 2 – End-to-End Data Analytics Pipeline
 
-Snowflake • Airflow • dbt • Preset (Superset)
-
+Snowflake • Airflow • dbt • Preset
 
 LAB 2
 
-👥 Team Members
+## Team Members
 
 Elsa Rose – GitHub Link
 
@@ -15,7 +14,7 @@ Lab Group: 9
 
 Our team consists of two applied analytics and data engineering students who collaborated to design a scalable stock price analytics system. Our combined skills in Python, cloud-based pipelines, Airflow, Snowflake, dbt, and BI visualization allowed us to build a fully automated ELT pipeline with scheduled workflows and analytical dashboards.
 
-📌 Project Overview
+## Project Overview
 
 This lab extends the foundational work from Lab 1 into a complete, production-style ELT data pipeline.
 The system incorporates:
@@ -30,7 +29,7 @@ Preset/Superset for business intelligence dashboards
 
 The final pipeline ingests stock price data, transforms it into analytical tables, schedules automated workflows, and visualizes insights from financial indicators.
 
-🎯 Problem Statement
+## Problem Statement
 
 The goal is to build a scheduled, automated analytics pipeline to process multi-year historical stock data.
 
@@ -46,7 +45,7 @@ Visualize insights through an interactive dashboard (Preset)
 
 The outcome is a scalable, reusable, version-controlled data analytics workflow.
 
-✔️ Functional Requirements
+## Functional Requirements
 
 Load raw stock price data from an API into Snowflake using Airflow
 
@@ -58,7 +57,7 @@ Build BI dashboards with Preset
 
 Ensure ETL idempotency using SQL MERGE & transactions
 
-🔧 Technical Specifications
+## Technical Specifications
 Component	Technology
 Cloud Warehouse	Snowflake
 Orchestration	Apache Airflow
@@ -66,7 +65,7 @@ Transformations	dbt
 Visualization	Preset / Superset
 Languages	SQL, Python, YAML
 Version Control	GitHub
-📊 Data Specifications
+## Data Specifications
 
 Dataset: Historical stock prices (daily)
 
@@ -74,7 +73,7 @@ Fields: ticker, date, open, close, high, low, volume
 
 Symbols used: NVDA, TSLA
 
-🏗️ Architecture
+## Architecture
 
 Pipeline Flow:
 
@@ -82,8 +81,7 @@ API → Airflow (ETL) → Snowflake RAW → Airflow (ELT) → dbt Models → Sno
 
 
 Major Components:
-
-1️⃣ Data Source – Alpha Vantage / yFinance
+1 Data Source – Alpha Vantage / yFinance
 
 Provides daily stock price data.
 
@@ -115,7 +113,7 @@ dbt test
 
 Visualizes stock price trends, momentum, and daily changes.
 
-🛠️ Airflow DAGs
+## Airflow DAGs
 ETL DAG: stock_price_etl_vantage
 
 Runs daily at 2:30 AM
@@ -145,7 +143,7 @@ Ensures transformations and tests run after ETL completes
 
 Uses BashOperator to execute dbt CLI commands
 
-🧮 dbt Transformations
+## dbt Transformations
 Key Calculations in the mart model (fct_stock_indicators.sql)
 
 Previous Close
@@ -168,7 +166,7 @@ close is not NULL
 
 volume is valid
 
-📊 BI Dashboards (Preset)
+## BI Dashboards (Preset)
 
 Dashboards were built for NVDA and TSLA, containing:
 
@@ -190,7 +188,7 @@ NVDA displays strong consistent growth and stable upward momentum
 
 TSLA shows higher price volatility with sharp momentum swings
 
-✅ Conclusion
+## Conclusion
 
 This lab successfully demonstrates a fully automated modern data engineering pipeline, integrating:
 
